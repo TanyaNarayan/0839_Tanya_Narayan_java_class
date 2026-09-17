@@ -1,0 +1,47 @@
+class BankAccount {
+    // Instance variables
+    int accountNumber;
+    String accountHolderName;
+    double balance;
+
+    // Static variable
+    static double interestRate = 5.0;
+
+    // Constructor
+    BankAccount(int accountNumber, String accountHolderName, double balance) {
+        this.accountNumber = accountNumber;
+        this.accountHolderName = accountHolderName;
+        this.balance = balance;
+    }
+
+    // Display account details
+    void display() {
+        System.out.println("Account Number: " + accountNumber);
+        System.out.println("Account Holder: " + accountHolderName);
+        System.out.println("Balance: " + balance);
+        System.out.println("Interest Rate: " + interestRate + "%");
+        System.out.println("-------------------------");
+    }
+
+    public static void main(String[] args) {
+        // Creating 3 bank accounts
+        BankAccount a1 = new BankAccount(101, "Tanya", 50000);
+        BankAccount a2 = new BankAccount(102, "Rahul", 75000);
+        BankAccount a3 = new BankAccount(103, "Priya", 60000);
+
+        // Display details before changing interest rate
+        System.out.println("Before changing interest rate:");
+        a1.display();
+        a2.display();
+        a3.display();
+
+        // Changing static interest rate using class name
+        BankAccount.interestRate = 7.5;
+
+        // Display details again
+        System.out.println("After changing interest rate:");
+        a1.display();
+        a2.display();
+        a3.display();
+    }
+}
